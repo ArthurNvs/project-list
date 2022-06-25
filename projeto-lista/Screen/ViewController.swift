@@ -15,8 +15,7 @@ class ViewController: UITableViewController {
     public override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? { "Nomes" }
     
     public override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let names = vmFactory?.names else { return 0}
-        return names.count
+        return vmFactory?.rowsNumber ?? 0
     }
     
     public override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

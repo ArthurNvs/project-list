@@ -3,6 +3,9 @@ import UIKit
 
 public class ViewModel: ScreenProtocol {
     var coordinator: MainCoordinator
+    var rowsNumber: Int {
+        names.count
+    }
     
     let names = ["Arthur", "Rodrigo", "Bruno", "Jorge", "Camila", "Daniel", "Carolina", "Matheus", "Catarina", "Silvana"]
     
