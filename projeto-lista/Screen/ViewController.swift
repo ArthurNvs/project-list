@@ -21,13 +21,18 @@ class ViewController: UITableViewController {
     
     public override func numberOfSections(in tableView: UITableView) -> Int { 1 }
     
-    public override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int { 10 }
+    public override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        guard let names = vmFactory?.names else { return 0}
+        return names.count
+    }
     
     public override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let names = vmFactory?.names else { return UITableViewCell() }
+            
         let cell = tableView.dequeueReusableCell(withIdentifier: "Names", for: indexPath)
         
-        cell.textLabel?.text = "\(vmFactory?.names[indexPath.row])"
-
+        cell.textLabel?.text = "\(names[indexPath.row])"
+        
         return cell
     }
     
@@ -53,4 +58,3 @@ extension ViewController {
     }
     
 }
-
