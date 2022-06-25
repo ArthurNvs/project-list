@@ -6,6 +6,6 @@ protocol Coordinator {
     
     func start()
     
-    func openAlert(text: String)
+    func openAlert(title: String)
     
 }

@@ -28,17 +28,18 @@ class ViewController: UITableViewController {
     
     public override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let names = vmFactory?.names else { return UITableViewCell() }
-            
         let cell = tableView.dequeueReusableCell(withIdentifier: "Names", for: indexPath)
-        
         cell.textLabel?.text = "\(names[indexPath.row])"
-        
         return cell
     }
     
-    public override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        "Nomes"
+    public override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? { "Nomes" }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let names = vmFactory?.names else { return }
+        vmFactory?.didTapListCell(name: "\(names[indexPath.row])")
     }
+    
 }
 
 extension ViewController {

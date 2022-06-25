@@ -1,5 +1,6 @@
 
 import Foundation
+import UIKit
 
 public class ViewModel: ScreenProtocol {
     var coordinator: MainCoordinator
@@ -11,8 +12,9 @@ public class ViewModel: ScreenProtocol {
     }
     
     public func didTapListCell(name: String) {
-        coordinator.openAlert(text: name)
+        coordinator.openAlert(title: name)
     }
+    
 }
 
 public protocol ScreenProtocol {

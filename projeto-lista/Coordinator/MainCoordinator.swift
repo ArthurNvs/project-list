@@ -12,8 +12,10 @@ class MainCoordinator: Coordinator {
         navCon.pushViewController(ViewController.makeViewController(coordinator: self), animated: true)
     }
     
-    func openAlert(text: String) {
-        print(text)
+    func openAlert(title: String) {
+        let alertController = UIAlertController(title: title, message: "", preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        navCon.viewControllers.first?.present(alertController, animated: true, completion: nil)
     }
     
 }
