@@ -1,4 +1,3 @@
-
 import Foundation
 import UIKit
 
@@ -18,7 +17,5 @@ public class ViewModel: ScreenProtocol {
 }
 
 public protocol ScreenProtocol {
-    
     func didTapListCell(name: String)
-    
 }

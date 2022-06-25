@@ -7,5 +7,4 @@ protocol Coordinator {
     func start()
     
     func openAlert(title: String)
-    
 }
