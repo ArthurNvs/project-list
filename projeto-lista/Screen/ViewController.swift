@@ -12,8 +12,6 @@ class ViewController: UITableViewController {
        super.init(coder: aDecoder)
     }
     
-    public override func numberOfSections(in tableView: UITableView) -> Int { 1 }
-    
     public override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? { "Nomes" }
     
     public override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
