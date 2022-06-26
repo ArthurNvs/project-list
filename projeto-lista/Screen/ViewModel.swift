@@ -1,18 +1,24 @@
-//
-//  ViewModel.swift
-//  projeto-lista
-//
-//  Created by Arthur Monteiro on 25/06/22.
-//
-
 import Foundation
+import UIKit
 
-public class ViewModel {
+public class ViewModel: ScreenProtocol {
+    var coordinator: MainCoordinator
+    var rowsNumber: Int {
+        names.count
+    }
+    
+    let names = ["Arthur", "Rodrigo", "Bruno", "Jorge", "Camila", "Daniel", "Carolina", "Matheus", "Catarina", "Silvana"]
+    
+    init(coordinator: MainCoordinator) {
+        self.coordinator = coordinator
+    }
+    
+    public func didTapListCell(name: String) {
+        coordinator.openAlert(title: name)
+    }
     
 }
 
-public protocol Screen {
-    
-    func didTapListCell()
-    
+public protocol ScreenProtocol {
+    func didTapListCell(name: String)
 }
